@@ -23,7 +23,11 @@ if (agreeToPlay) {
           let randomize = Math.floor(Math.random() * options.length)
           return options[randomize]
         }
+
+        // Save random computer value
         let computerChoice = computerPlay()
+
+        // Match draws between player and computer
         if (playerChoice === computerChoice) {
           message = `Player: ${playerChoice}, Computer: ${computerChoice} -It's a tie!`;
         } else if (playerChoice === `rock` && computerChoice === `paper`) {
@@ -47,20 +51,24 @@ if (agreeToPlay) {
         } else {
           message = `Player: ${playerChoice}, Computer: ${computerChoice} - ERROR: WHAT IS THIS`;
         }
+
+      // Incorrect input
       } else {
         alert(`You did not entered the correct tool, please try again or abort.`)
-        // location.reload()
       }
+
+    // Cancel, esc or choose to not fill in field
     } else {
-      // Cancel, esc or choose to not fill in field
       alert(`No problem, come back when you make up your mind`)
     }
   }
+
+// Not willing to play game on initial request
 } else {
-  // Press cancel or esc
   alert(`Oke, maybe next time`)
 }
 
+// 5 matches
 for (let i = 0; i < 5; i++) {
   playRound()
   console.log(message);
@@ -68,6 +76,7 @@ for (let i = 0; i < 5; i++) {
   console.log(`computerscore: ${computerScore}`);
 }
 
+// Communicate final score in different outcomes
 if (playerScore > computerScore) {
   console.log(`End of game, you have won with a score of ${playerScore}  against a computer score of ${computerScore}`);
 } else if (computerScore > playerScore) {
