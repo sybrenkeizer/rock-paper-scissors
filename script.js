@@ -17,9 +17,9 @@ if (agreeToPlay) {
 
       // Make sure input is correct
       let playerChoice = playerInput.trim().toLowerCase()
-      if (playerChoice === `rock`
-        || playerChoice === `paper`
-        || playerChoice === `scissors`) {
+      if (playerChoice === `rock` ||
+        playerChoice === `paper` ||
+        playerChoice === `scissors`) {
 
         // Start with game
         function computerPlay() {
