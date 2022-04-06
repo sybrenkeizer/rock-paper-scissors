@@ -1,0 +1,81 @@
+<!-- TABLE OF CONTENTS
+
+1 VIDEO
+
+2 INTRO
+
+
+
+4 PLAY FIELD
+4.1 SCOREBOARD
+4.2 MESSAGEBOARD
+4.3 CHOICES
+
+ -->
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <script src="script.js" type="text/javascript" defer></script>
+    <link rel="stylesheet" href="style.css">
+    <title></title>
+  </head>
+  <body>
+    <main class="main__container">
+
+      <!-- 1 VIDEO -->
+      <div class="video__container">
+        <video class="video__background" autoplay muted>
+          <source src="vid/conflict-vid.mp4" type="video/mp4">
+        </video>
+      </div>
+
+      <!-- 2  INTRO -->
+      <div class="intro__container">
+        <p class="intro__par"></p>
+        <a class="button play-button" href="#" >Start The Game</a>
+      </div>
+
+      <!-- 3 GAME -->
+      <div class="game-container">
+        <h1 class="header__game"></h1>
+
+        <!-- 4.1 SCOREBOARD -->
+        <div class="scoreboard">
+          <h2 class="score__header">Scoreboard</h2>
+          <div class="scoreboard__players">
+            <div class="human">
+              <p class="human__par">You</p>
+              <p class="human__score">0/0</p>
+            </div>
+            <div class="computer">
+              <p class="computer__par">Machine</p>
+              <p class="computer__score">0/0</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- MESSAGEBOARD -->
+        <div class="messageboard">
+          <p class="messageboard__round-result">This message displays round result</p>
+        </div>
+
+        <!-- CHOICES -->
+        <div class="choices__container">
+          <div class="choice rock-box">
+            <img class="rock__image" src="img/rock.png" alt="rock">
+          </div>
+          <div class="choice paper-box">
+            <img class="paper__image" src="img/paper.png" alt="paper">
+          </div>
+          <div class="choice scissor-box">
+            <img class="scissor__image" src="img/scissor.png" alt="scissor">
+          </div>
+        </div>
+
+      </div> <!-- Closure play-container -->
+
+    </main>
+  </body>
+</html>

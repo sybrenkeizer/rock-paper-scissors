@@ -2,22 +2,20 @@
 
 The Odin Project - Foundations
 
+
 Project #4: Rock, Paper and Scissors
+
 
 Source: https://sybrenkeizer.github.io/top-rock-paper-scissors/
 
-Language: JS
 
-Date start: 28/03/2022
+Resources used:
 
-Date finish: 28/03/2022
+  icons:
+    scissor - https://www.flaticon.com/authors/creatype
+    rock - https://www.flaticon.com/authors/nadiinko
+    paper - https://www.freepik.com/
 
-Hours: 9 hours
+  background video: https://www.pexels.com/@kampus
 
-Learned:
-
-  - Interaction between multiple functions
-
-Improve:
-
-  - Implementatiojn of ternary operators
+  background image: https://www.pexels.com/@yankrukov/

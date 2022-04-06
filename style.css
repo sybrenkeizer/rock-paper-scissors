@@ -1,0 +1,284 @@
+/* TABLE OF CONTENTS
+
+1. GLOBAL
+1.1 VARIABLES
+1.2 OTHER
+
+2. TYPOGRAPHY
+
+3. LAYOUT
+3.1 BACKGROUND
+3.2 INTRO
+3.3 GAME
+
+*/
+
+
+/* PROPERTY ORDER:
+    - Display (float, grid, flex)
+    - Positioning
+    - Box modelling (background, height, width, border, padding, text alignment, )
+    - Typography
+    - Manipulation (transform, filter, opacity)
+    - Misc (border radius, box shadow)
+*/
+
+
+
+
+
+/*  ========
+    1 GLOBAL
+    ========  */
+
+
+/* === VARIABLES === */
+
+:root {
+  --ff-pri: ;
+  --ff-dec: ;
+
+  --fw-reg: 200;
+  --fw-bold: 600;
+
+  --clr-light: #fff;
+  --clr-dark: ;
+  --clr-accent: ;
+
+  --fs-h1: 4rem;
+  --fs-h2: 2.8rem;
+  --fs-h3: 2rem;
+  --fs-h4: 1.5rem;
+  --fs-p: 1.3rem;
+  --fs-body: 1.2rem;
+  --fs-li-a: 1.2rem;
+  --fs-hl: 2.4rem;
+
+  --spacer-sm: 1em;
+  --spacer-md: calc(var(--spacer-sm) * 2);
+  --spacer-lg: calc(var(--spacer-sm) * 3);
+
+  --text-shadow-light: 1px -1px 0px #fff;
+  --text-shadow-dark: 1px -1px 0px #000;
+  --box-shadow-light: 2px 3px 8px 3px #fff;
+  --box-shadow-dark: 2px 3px 8px 3px #000;
+}
+
+
+/* === General === */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--ff-pri);
+  color: var(--clr-dark);
+  line-height: 1.4;
+  font-size: var(--fs-body);
+  font-weight: var(--fw-reg);
+}
+
+
+
+
+
+/*  ============
+    2 TYPOGRAPHY
+    ============  */
+
+h1 { font-size: var(--fs-h1); }
+h2 { font-size: var(--fs-h2); }
+h3 { font-size: var(--fs-h3); }
+h4 { font-size: var(--fs-h4); }
+p { font-size: var(--fs-p); }
+li a { font-size: var(--fs-a); }
+
+a {
+  text-decoration: none;
+  color: var(--clr-dark);
+}
+
+
+
+/*  ========
+    3 LAYOUT
+    ========  */
+
+.main__container {
+
+}
+
+
+/* === 3.1 BACKGROUND === */
+
+.video__container:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #0008;
+  opacity: 0;
+  animation-name: videoOpacityAnimation;
+  animation-timing-function: ease;
+  animation-duration: 8s;
+  animation-delay: 0s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  z-index: -3;
+}
+
+@keyframes videoOpacityAnimation {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+.video__background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  z-index: -3;
+}
+
+
+
+/* === 3.2 INTRO === */
+
+.intro__container {
+  display: flex;
+  flex-direction: column;
+  max-width: 50rem;
+  min-width: 18rem;
+  margin-inline: auto;
+  margin-top: 10%;
+  padding: 1em 1em 0.3em 1em;
+}
+
+.intro__par,
+.play-button {
+  font-size: var(--fs-hl);
+  color: #fff;
+  text-align: center;
+  margin-bottom: 0.5em;
+  opacity: 0;
+  transition-duration: 0.5s;
+  transition-property: all;
+  transition-timing-function: ease;
+  /* transition: 0.5s all ease; */
+  animation-name: introParFadeInOutAnimation;
+  animation-duration: 6s;
+  animation-delay: 3s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  /* animation: introParFadeInOutAnimation 6s ease-in 3s 1 forwards; */
+}
+
+@keyframes introParFadeInOutAnimation {
+  0% { opacity 0; }
+  50% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+.play-button {
+  border: 0.06em solid #fff;
+  margin: auto;
+  padding: 0em 0.5em 0.03em 0.5em;
+  background-color: #0005;
+}
+
+.play-button:hover {
+  letter-spacing: 0.1em;
+  background-color: #0009;
+}
+
+
+
+/* === 3.3 GAME === */
+
+.game-container {
+  display: none;
+  background-color: #fff6;
+  border: 0.3em solid #000;
+  border-radius: 20px;
+  max-width: 40em;
+  margin-inline: auto;
+  margin-block: 3rem;
+  flex-direction: column;
+}
+
+
+/* SCOREBOARD */
+
+.scoreboard {
+  background-color: #0006;
+  border: 0.2em solid #000;
+  max-width: 50%;
+  margin-inline: auto;
+  margin-top: 1em;
+  border-radius: 10px;
+}
+
+.scoreboard__players {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 0.5em;
+}
+
+.score__header,
+.human__par,
+.computer__par,
+.human__score,
+.computer__score {
+  text-align: center;
+}
+
+
+/* MESSAGEBOARD */
+
+.messageboard {
+  margin-block: 5em;
+}
+
+.messageboard__round-result {
+  text-align: center;
+}
+
+
+/* CHOICES */
+
+.choices__container {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 2em;
+}
+
+.choice {
+  max-width: 8em;
+  max-height: 8em;
+  background-color: #fff8;
+  padding: 1em;
+  border: 0.3em solid #0008;
+  border-radius: 10px;
+}
+
+.choice:hover {
+  border: 0.3em solid #000;
+}
+
+.choice img {
+  height: 100%;
+  width: 100%;
+}
