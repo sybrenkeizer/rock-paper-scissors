@@ -1,66 +1,80 @@
-/* TABLE OF CONTENTS
+// alert(`let's play Rock, Paper & Scissor!\nThe first player to score 5 points wins the game`);
 
-1 INTRO
+const playerOptions = document.querySelectorAll('.choice')
+const player = document.querySelector('.human__score');
+const computer = document.querySelector('.computer__score');
+const roundResult = document.querySelector('.messageboard__round-result');
+const computerOptions = ['rock', 'paper', 'scissor'];
+const modal = document.querySelector('.modal');
+const modalMessage = document.querySelector('.modal__message');
+const modalBtn = document.querySelector('.modal__button')
 
-2 GAME
-
-*/
-
-
-// INTRO
-const introPar = document.querySelector(`.intro__par`);
-const playButton = document.querySelector(`.play-button`);
-const introContainer = document.querySelector(`.intro__container`);
-
-function introFade () {
-  setTimeout(function () {
-    introPar.textContent = `Tired of endless quarrels?`;
-    playButton.setAttribute(`style`,
-      `animation-delay: 19s;`
-    );
-  }, 0 );
-  setTimeout(function () {
-    introPar.textContent = `It is time for...`;
-    introPar.setAttribute(`style`,
-      `animation-delay: 9s;`
-    );
-  }, 9000 );
-  setTimeout(function () {
-    introPar.textContent = `Rock, Paper & Scissors`;
-    introPar.setAttribute(`style`,
-      `animation-delay: 15s;
-      font-size: 4rem`
-    );
-  }, 15000 );
-  setTimeout(function () {
-    introPar.setAttribute(`style`,
-      `opacity: 1;
-      animation-fill-mode: none;
-      font-size: 4rem`
-    );
-    playButton.setAttribute(`style`,
-      `opacity: 1;
-      animation-fill-mode: none;`
-    );
-  }, 18000 );
-}
-introFade();
+let playerScore = 0;
+let computerScore = 0;
 
 
+playerOptions.forEach(playerOption => {
+  playerOption.addEventListener('click', function(e) {
 
-// GAME
-const gameContainer = document.querySelector(`.game-container`);
+    const randomNumber = Math.floor(Math.random() * computerOptions.length);
+    const computerChoice = computerOptions[randomNumber];
+    const getOption = e.target.attributes.value.textContent
 
-function enterGame() {
-  playButton.addEventListener(`click`, function() {
-    introPar.style.display = `none`;
-    playButton.style.display = `none`;
-    introContainer.style.display = `none`;
-    gameContainer.style.display = `block`;
+    if (
+    getOption === 'rock' && computerChoice === 'rock' ||
+    getOption === 'paper' && computerChoice === 'paper' ||
+    getOption === 'scissor' && computerChoice === 'scissor') {
+      roundResult.textContent = `It's a tie, try again`;
+    }
+    else if (
+    getOption === 'rock' && computerChoice === 'paper' ||
+    getOption === 'paper' && computerChoice === 'scissor' ||
+    getOption === 'scissor' && computerChoice === 'rock') {
+      roundResult.textContent = 'You lose this round!';
+      computerScore++;
+    }
+    else if (
+    getOption === 'rock' && computerChoice === 'scissor' ||
+    getOption === 'scissor' && computerChoice === 'paper' ||
+    getOption === 'paper' && computerChoice === 'rock' ) {
+      roundResult.textContent = 'You win this round!';
+      playerScore++;
+    }
+    player.innerHTML = playerScore;
+    computer.innerHTML = computerScore;
+
+    if (playerScore === 5 && computerScore < 5) {
+      modal.classList.add('modal--visible');
+      modalMessage.textContent = 'You win!';
+    } else if (computerScore === 5 && playerScore < 5) {
+      modal.classList.add('modal--visible');
+      modalMessage.textContent = 'You lose!';
+    }
+
+    modalBtn.addEventListener('click', function() {
+      modal.classList.remove('modal--visible');
+      playerScore = 0;
+      player.innerHTML = playerScore;
+      computerScore = 0;
+      computer.innerHTML = computerScore;
+      roundResult.textContent = '';
+    })
 
   })
-}
-enterGame();
+})
+
+console.log(playerScore);
+// End game modal
+
+
+
+
+
+
+
+
+
+
 
 
 //

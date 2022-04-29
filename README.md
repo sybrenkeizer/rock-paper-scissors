@@ -19,3 +19,29 @@ Resources used:
   background video: https://www.pexels.com/@kampus
 
   background image: https://www.pexels.com/@yankrukov/
+
+
+Checklist:
+
+General
+- High performance
+- Understand everything
+- Readable
+
+
+CSS
+- DRY
+- Attributes ordered
+- Visability (proper use of colors)
+
+
+HTML
+- Proper tag names
+- Semantic HTML
+- Accessibility features
+
+
+JS
+- Proper function names
+- ES6
+- Maximum concise and readable

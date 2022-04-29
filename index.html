@@ -4,12 +4,12 @@
 
 2 INTRO
 
+3 GAME
+3.1 SCOREBOARD
+3.2 MESSAGEBOARD
+3.3 CHOICES
 
-
-4 PLAY FIELD
-4.1 SCOREBOARD
-4.2 MESSAGEBOARD
-4.3 CHOICES
+4 MODAL
 
  -->
 
@@ -25,56 +25,65 @@
     <main class="main__container">
 
       <!-- 1 VIDEO -->
-      <div class="video__container">
+      <!-- <div class="video__container">
         <video class="video__background" autoplay muted>
           <source src="vid/conflict-vid.mp4" type="video/mp4">
         </video>
-      </div>
+      </div> -->
 
       <!-- 2  INTRO -->
-      <div class="intro__container">
+      <!-- <div class="intro__container">
         <p class="intro__par"></p>
         <a class="button play-button" href="#" >Start The Game</a>
-      </div>
+      </div> -->
 
       <!-- 3 GAME -->
       <div class="game-container">
         <h1 class="header__game"></h1>
 
-        <!-- 4.1 SCOREBOARD -->
+        <!-- 3.1 SCOREBOARD -->
         <div class="scoreboard">
           <h2 class="score__header">Scoreboard</h2>
           <div class="scoreboard__players">
             <div class="human">
               <p class="human__par">You</p>
-              <p class="human__score">0/0</p>
+              <p class="human__score">0</p>
             </div>
             <div class="computer">
               <p class="computer__par">Machine</p>
-              <p class="computer__score">0/0</p>
+              <p class="computer__score">0</p>
             </div>
           </div>
         </div>
 
-        <!-- MESSAGEBOARD -->
+        <!-- 3.2 MESSAGEBOARD -->
         <div class="messageboard">
-          <p class="messageboard__round-result">This message displays round result</p>
+          <p class="messageboard__round-result"></p>
         </div>
 
-        <!-- CHOICES -->
+        <!-- 3.3 CHOICES -->
         <div class="choices__container">
-          <div class="choice rock-box">
-            <img class="rock__image" src="img/rock.png" alt="rock">
+          <div class="choice rock-box rock" value="rock">
+            <img class="rock__image rock" src="img/rock.png" alt="rock" value="rock">
           </div>
-          <div class="choice paper-box">
-            <img class="paper__image" src="img/paper.png" alt="paper">
+          <div class="choice paper-box paper" value="paper">
+            <img class="paper__image paper" src="img/paper.png" alt="paper" value="paper">
           </div>
-          <div class="choice scissor-box">
-            <img class="scissor__image" src="img/scissor.png" alt="scissor">
+          <div class="choice scissor-box scissor" value="scissor">
+            <img class="scissor__image scissor" src="img/scissor.png" alt="scissor" value="scissor">
           </div>
         </div>
 
       </div> <!-- Closure play-container -->
+
+    <!-- 4 MODAL -->
+    <div class="modal">
+      <div class="modal__container">
+        <p class="modal__message">some text</p>
+        <button class="modal__button button" type="button" name="button">Let's go for another game</button>
+      </div>
+    </div>
+
 
     </main>
   </body>
