@@ -6,7 +6,7 @@ The Odin Project - Foundations
 Project #4: Rock, Paper and Scissors
 
 
-Source: https://sybrenkeizer.github.io/top-rock-paper-scissors/
+View project: https://sybrenkeizer.github.io/top-rock-paper-scissors/
 
 
 Resources used:
