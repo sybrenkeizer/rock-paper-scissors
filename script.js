@@ -24,20 +24,20 @@ playerOptions.forEach(playerOption => {
     getOption === 'rock' && computerChoice === 'rock' ||
     getOption === 'paper' && computerChoice === 'paper' ||
     getOption === 'scissor' && computerChoice === 'scissor') {
-      roundResult.textContent = `It's a tie, try again`;
+      roundResult.innerHTML = `Computer throws a ${computerChoice}<br>It's a tie, try again`;
     }
     else if (
     getOption === 'rock' && computerChoice === 'paper' ||
     getOption === 'paper' && computerChoice === 'scissor' ||
     getOption === 'scissor' && computerChoice === 'rock') {
-      roundResult.textContent = 'You lose this round!';
+      roundResult.innerHTML = `Computer throws a ${computerChoice}<br>You lose this round!`;
       computerScore++;
     }
     else if (
     getOption === 'rock' && computerChoice === 'scissor' ||
     getOption === 'scissor' && computerChoice === 'paper' ||
     getOption === 'paper' && computerChoice === 'rock' ) {
-      roundResult.textContent = 'You win this round!';
+      roundResult.innerHTML = `Computer throws a ${computerChoice}<br>You win this round!`;
       playerScore++;
     }
     player.innerHTML = playerScore;

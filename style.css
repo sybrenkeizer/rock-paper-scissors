@@ -42,7 +42,6 @@
   --fw-reg: 200;
   --fw-bold: 600;
 
-
   --clr-darkest: #0009;
   --clr-darker: #6E6F73;
   --clr-dark: #8C8C8C;
@@ -91,8 +90,6 @@ body {
   font-size: var(--fs-body);
   font-weight: var(--fw-reg);
 }
-
-
 
 
 
@@ -226,8 +223,8 @@ a {
 /* SCOREBOARD */
 
 .scoreboard {
-  background-color: var(--clr-darker);
-  border: 0.2em solid #000;
+  background-color: var(--clr-avarage);
+  border: 0.3em solid var(--clr-darker);
   max-width: 50%;
   margin-inline: auto;
   margin-top: 1em;
@@ -252,11 +249,13 @@ a {
 /* MESSAGEBOARD */
 
 .messageboard {
-  margin-block: 5em;
+  /* margin-block: 3em; */
+  padding-block: 2em 5em;
+
 }
 
 .messageboard__round-result {
-  font-size: 1.5em;
+  font-size: 1.2em;
   text-align: center;
   height: 0.5em;
 }
@@ -281,6 +280,8 @@ a {
 
 .choice:hover {
   border: 0.3em solid #000;
+  background-color: var(--clr-darker);
+
 }
 
 .choice img {
@@ -300,7 +301,6 @@ a {
   background-color: #fff;
   display: grid;
   place-items: center;
-  transition: var(--transition);
   visibility: hidden;
   z-index: -s10;
 }
